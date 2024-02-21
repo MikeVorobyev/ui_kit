@@ -449,7 +449,7 @@ i.ic_arrow_right {
 
 .tooltip__svg {
     position: absolute;
-    bottom: -24.5px;
+    bottom: -24px;
     left: 50%;
     transform: translateX(-50%);
 }
