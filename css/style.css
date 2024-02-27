@@ -24,6 +24,7 @@
 body {
     font-family: 'Nunito';
     background-color: var(--bg_black);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
