@@ -265,11 +265,11 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-.radio :checked + div::after {
+.radio input:checked + div::after {
     background-color: var(--button_orange-bg);
 }
 
-.radio :checked + div {
+.radio input:checked + div {
     background-color: var(--button_bg-color);
     box-shadow: var(--button_shadow);
 }
@@ -309,15 +309,21 @@ body {
 }
 
 .round-progress-1 circle {
-    stroke-dasharray: 200 315;
+    /* 315 - это длина данной окружности с радиусом 50 (формула: 2 × π × r = 2 × 3.14 × 50 = 314.159) */
+    /* 60% */
+    stroke-dasharray: calc(315 * 0.6) 315;
 }
 
 .round-progress-2 circle {
-    stroke-dasharray: 80 315;
+    /* 315 - это длина данной окружности с радиусом 50 (формула: 2 × π × r = 2 × 3.14 × 50 = 314.159) */
+    /* 25% */
+    stroke-dasharray: calc(315 * 0.25) 315;
 }
 
 .round-progress-3 circle {
-    stroke-dasharray: 236 315;
+    /* 315 - это длина данной окружности с радиусом 50 (формула: 2 × π × r = 2 × 3.14 × 50 = 314.159) */
+    /* 75% */
+    stroke-dasharray: calc(315 * 0.75) 315;
 }
 
 .round-progress div {
@@ -420,21 +426,25 @@ i.ic_arrow_right {
 
 
 /* TOOLTIP START */
-.tooltip__wrapper {
+.tooltip__row {
     display: flex;
     align-items: center;
     gap: 32px;
     justify-content: space-between;
 }
 
-.tooltip__inner {
+.tooltip__wrapper {
     position: relative;
     flex-grow: 1;
-    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, .3));
+    filter: 
+        drop-shadow(-4px -4px 4px #FFFFFF17)
+        drop-shadow(4px 4px 4px rgba(0, 0, 0, .3));
+    color: var(--button_orange-bg);
+    background-color: var(--button_bg-color);
+    border-radius: var(--button_radius);
 }
 
 .tooltip {
-    box-shadow: -4px -4px 4px #FFFFFF17;
     position: relative;
     font-size: 28px;
     padding: 16px 16px;
@@ -503,7 +513,7 @@ i.ic_arrow_right {
 
 
 /* MESSAGE START */
-.message__wrapper {
+.message__row {
     position: relative;
     display: flex;
     align-items: center;
@@ -512,13 +522,11 @@ i.ic_arrow_right {
     margin: 0px 45px;
 }
 
-.message__wrapper_shadow-1 {
+.message__wrapper {
     flex-grow: 1;
-    filter: drop-shadow(-4px -4px 4px #FFFFFF17);
-}
-
-.message__wrapper_shadow-2 {
-    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, .3));
+    filter: 
+        drop-shadow(-4px -4px 4px #FFFFFF17)
+        drop-shadow(4px 4px 4px rgba(0, 0, 0, .3));
 }
 
 .message-left {
